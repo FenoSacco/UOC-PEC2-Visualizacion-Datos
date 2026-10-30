@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PEC2 | Visualización de Datos | UOC</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #253247;
+      background: #f4f7fb;
+      line-height: 1.6;
+    }
+    header {
+      background: #16365c;
+      color: white;
+      padding: 48px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 10px; }
+    header p { margin: 5px 0; }
+    main {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+    section {
+      background: white;
+      padding: 28px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 14px #00000012;
+    }
+    h2 { color: #16365c; }
+    .tag {
+      color: #496782;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 20px auto;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
+    a { color: #1765aa; }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #5d6877;
+    }
+    @media (max-width: 650px) {
+      iframe { height: 520px; }
+      section { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PEC2 — Visualización de Datos</h1>
+  <p>Máster Universitario en Ciencia de Datos · UOC</p>
+  <p>Fernando Esteban Sacco · 2026</p>
+</header>
+
+<main>
+  <section>
+    <h2>Tres técnicas de visualización</h2>
+    <p>
+      Este proyecto presenta tres técnicas de visualización
+      aplicadas a datos abiertos de Gapminder correspondientes
+      al año 2023. El análisis utiliza 193 países y explora
+      relaciones, distribuciones e intersecciones entre
+      indicadores demográficos y económicos.
+    </p>
+  </section>
+
+  <section>
+    <p class="tag">TÉCNICA I · BUBBLE CHART</p>
+    <h2>Desarrollo económico y esperanza de vida</h2>
+    <p>
+      Cada burbuja representa un país. Su posición muestra
+      el PIB per cápita y la esperanza de vida, mientras
+      que su tamaño representa la población.
+      El eje económico utiliza una escala logarítmica.
+    </p>
+    <iframe
+      src="https://flo.uri.sh/visualisation/30742523/embed"
+      title="Bubble Chart: desarrollo económico y esperanza de vida"
+      loading="lazy">
+    </iframe>
+    <p>
+      <a href="https://public.flourish.studio/visualisation/30742523/"
+         target="_blank" rel="noopener noreferrer">
+        Abrir visualización interactiva en Flourish
+      </a>
+    </p>
+    <p><strong>Hallazgo:</strong> se observa una asociación
+      positiva entre PIB per cápita y esperanza de vida,
+      sin que ello implique causalidad.</p>
+  </section>
+
+  <section>
+    <p class="tag">TÉCNICA II · RAINCLOUD PLOT</p>
+    <h2>Esperanza de vida por región geográfica</h2>
+    <p>
+      Se combinan curvas de densidad, diagramas de caja
+      y puntos individuales para comparar las distribuciones
+      de esperanza de vida entre seis regiones.
+    </p>
+    <img
+      src="PEC2_Raincloud_Gapminder_2023.png"
+      alt="Raincloud Plot de esperanza de vida por región">
+    <p><strong>Hallazgo:</strong> Europa presenta la mediana
+      más alta (80,90 años), mientras que África presenta
+      la más baja (64,85 años). Oceanía muestra la mayor
+      dispersión entre países.</p>
+  </section>
+
+  <section>
+    <p class="tag">TÉCNICA III · UPSET PLOT</p>
+    <h2>Intersecciones entre indicadores de desarrollo</h2>
+    <p>
+      Se analizan tres conjuntos: países con esperanza de
+      vida de al menos 80 años, PIB per cápita de al menos
+      30.000 (PPA) y población de al menos 50 millones.
+      Los umbrales son criterios analíticos definidos
+      para este ejercicio.
+    </p>
+    <img
+      src="PEC2_UpSet_Gapminder_2023.png"
+      alt="UpSet Plot de intersecciones entre tres indicadores">
+    <p><strong>Hallazgo:</strong> solamente 6 países cumplen
+      simultáneamente los tres criterios, mientras que
+      112 no cumplen ninguno.</p>
+  </section>
+
+  <section>
+    <h2>Fuente y metodología</h2>
+    <p>
+      Fuente de datos: Gapminder, año 2023.
+      Visualizaciones elaboradas con Flourish y Python
+      (pandas, matplotlib, seaborn, scipy y upsetplot).
+    </p>
+    <p>
+      El análisis se realiza por país, sin ponderación
+      por población. Las agrupaciones regionales y los
+      umbrales del UpSet Plot se han establecido para
+      esta actividad académica.
+    </p>
+  </section>
+</main>
+
+<footer>
+  PEC2 · Visualización de Datos · UOC · 2026
+</footer>
+
+</body>
+</html>
